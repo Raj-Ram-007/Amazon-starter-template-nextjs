@@ -32,6 +32,25 @@ Heroicons
 
 
 
+
 ---
 
-    https://youtu.be/VA-UN_6oNG8?t=3038
+Carosel
+        https://www.npmjs.com/package/react-responsive-carousel
+
+        Need to include
+            import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+
+
+---
+
+FakeStore
+        https://fakestoreapi.com/
+
+
+
+---
+
+
+TODO : Add advertisig banners 
+        https://youtu.be/VA-UN_6oNG8?t=7503
