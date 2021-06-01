@@ -1,3 +1,8 @@
+
+Ctrl-J - terminal
+Ctrl-B - tree
+
+
 npm install
 npm run dev
 
@@ -49,8 +54,24 @@ FakeStore
 
 
 
+
+NextAuth 
+
+        npm install next-auth 
+
+
+---
+
+Firebase
+
+        npm install firebase 
+
+        https://console.firebase.google.com/u/3/project/homeeffect-bf629/authentication/providers
+
+
 ---
 
 
-TODO : Add advertisig banners 
-        https://youtu.be/VA-UN_6oNG8?t=7503
+TODO : REDUX
+        https://youtu.be/uGhekiErHso?t=3589
+              
