@@ -2,6 +2,8 @@
 Ctrl-J - terminal
 Ctrl-B - tree
 
+---
+
 
 npm install
 npm run dev
@@ -75,3 +77,4 @@ Firebase
 TODO : REDUX
         https://youtu.be/uGhekiErHso?t=3589
               
+Install redux dev tools onto Chrome
