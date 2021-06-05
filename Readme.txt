@@ -74,7 +74,16 @@ Firebase
 ---
 
 
+Sitemap 
+
+        https://www.youtube.com/watch?v=rIh-VelVzgc
+
+---
+
+
+
+
 TODO : REDUX
-        https://youtu.be/uGhekiErHso?t=3589
+        https://youtu.be/uGhekiErHso?t=5619
               
 Install redux dev tools onto Chrome
