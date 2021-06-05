@@ -82,8 +82,21 @@ Sitemap
 
 
 
+Stripe 
+
+        https://youtu.be/4E0WOUYF-QI?t=985
+
+        
+
+
+
 
 TODO : REDUX
         https://youtu.be/uGhekiErHso?t=5619
-              
+
+        https://www.youtube.com/watch?v=4E0WOUYF-QI
+
+
+
+
 Install redux dev tools onto Chrome
