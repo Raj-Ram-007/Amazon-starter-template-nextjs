@@ -77,6 +77,28 @@ Firebase
 Sitemap 
 
         https://www.youtube.com/watch?v=rIh-VelVzgc
+        this was not effecient 
+
+        used this instead 
+        https://www.youtube.com/watch?v=KHS6Kru_uhM
+        with module : nextjs-sitemap-generator
+
+        built scripts file : ./scripts/generate-sitemap.js
+        updated: package.json with :  "sitemap": "node ./scripts/generate-sitemap.js"
+        run with : node ./scripts/generate-sitemap.js
+
+
+---
+
+SEO: 
+
+
+
+
+--
+
+Google Analytics
+
 
 ---
 
