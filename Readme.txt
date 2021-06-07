@@ -4,10 +4,14 @@ Ctrl-B - tree
 
 ---
 
+Rebuild and Run
 
-npm install
-npm run dev
+        npm install
+        npm run dev
 
+        http://localhost:3000/
+
+        curl http://localhost:3000/
 
 ---
 
@@ -90,8 +94,17 @@ Sitemap
 
 ---
 
-SEO: 
+SEO: Acessability, Best practice and SEO
 
+        https://www.youtube.com/watch?v=GfsqFaiaK3A
+
+        Also read: https://moz.com/blog/the-ultimate-guide-to-seo-meta-tags
+
+        Added _document.jsx to hold meta tags requested by google
+
+
+
+SEO: performance
 
 
 
@@ -108,7 +121,26 @@ Stripe
 
         https://youtu.be/4E0WOUYF-QI?t=985
 
-        
+        npm install --save stripe
+        npm install @stripe/stripe-js
+
+        npm install axios
+
+
+        install CLI for Windows 
+                https://stripe.com/docs/stripe-cli
+
+                https://youtu.be/4E0WOUYF-QI?t=4412
+
+                
+
+
+
+Klaviyo 
+
+
+
+RoyalMail 
 
 
 

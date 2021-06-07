@@ -1,13 +1,24 @@
 import Head from "next/head";
 import Header from "../components/Header";
 import Banner from "../components/Banner";
+
+//import loadable from "@loadable/component";
 import ProductFeed from "../components/ProductFeed";
+//const ProductFeed = loadable(() => import("../components/ProductFeed"));
 
 export default function Home({ products }) {
   return (
     <div className="bg-gray-100">
       <Head>
-        <title>HomeEffect</title>
+        {/* // Common Header information moved into _document.jsx */}
+
+        <title>HomeEffect - Products for You and Your Home</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <meta
+          name="description"
+          content="HomeEffect - Products for You and Your Home"
+        />
       </Head>
       <Header />
 
@@ -16,8 +27,7 @@ export default function Home({ products }) {
 
         <Banner />
 
-        {/* Feed */}
-
+        {/* Product Feed */}
         <ProductFeed products={products} />
       </main>
     </div>

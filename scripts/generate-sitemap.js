@@ -1,14 +1,18 @@
 const sitemap = require("nextjs-sitemap-generator");
 const fs = require("fs");
 const path = require("path");
-
-const url = process.env.HOST;
+require("dotenv").config();
 
 //const BUILD_ID = fs.readFileSync(".next/BUILD_ID").toString();
 
+const hostname = process.env.HOST;
+
+!hostname
+  ? console.log("Hostname not defined - set as envronment variable.")
+  : console.log("Hostname defined as : ", hostname);
+
 sitemap({
-  //baseUrl: url,
-  baseUrl: "http://localhost:3000",
+  baseUrl: `${hostname}`,
 
   // If you are using Vercel platform to deploy change the route to /.next/serverless/pages
   pagesDirectory: __dirname + "/../src/pages",

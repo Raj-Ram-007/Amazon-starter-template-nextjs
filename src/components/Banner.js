@@ -15,13 +15,31 @@ function Banner() {
         interval={5000}
       >
         <div>
-          <img loading="lazy" src="https://links.papareact.com/gi1" alt="" />
+          <img
+            loading="lazy"
+            src="https://links.papareact.com/gi1"
+            alt="Image 1"
+            height={600}
+            width={1500}
+          />
         </div>
         <div>
-          <img loading="lazy" src="https://links.papareact.com/6ff" alt="" />
+          <img
+            loading="lazy"
+            src="https://links.papareact.com/6ff"
+            alt="Image 2"
+            height={600}
+            width={1500}
+          />
         </div>
         <div>
-          <img loading="lazy" src="https://links.papareact.com/7ma" alt="" />
+          <img
+            loading="lazy"
+            src="https://links.papareact.com/7ma"
+            alt="Image 3"
+            height={600}
+            width={1500}
+          />
         </div>
       </Carousel>
     </div>
