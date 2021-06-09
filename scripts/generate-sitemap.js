@@ -8,7 +8,7 @@ require("dotenv").config();
 const hostname = process.env.HOST;
 
 !hostname
-  ? console.log("Hostname not defined - set as envronment variable.")
+  ? console.error("ERROR: Hostname not defined - set as envronment variable.")
   : console.log("Hostname defined as : ", hostname);
 
 sitemap({

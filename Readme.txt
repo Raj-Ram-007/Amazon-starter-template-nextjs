@@ -135,6 +135,24 @@ Stripe
                 
 
 
+Firebase 
+
+        npm install firebase-admin 
+        npm install micro
+
+        https://youtu.be/4E0WOUYF-QI?t=8948
+
+
+        Run: 
+        stripe.exe login 
+        stripe.exe listen --forward-to localhost:3000/api/webhook
+
+
+
+Deployment 
+
+        https://youtu.be/4E0WOUYF-QI?t=9719
+
 
 Klaviyo 
 
