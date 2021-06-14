@@ -30,13 +30,16 @@ function Product({ id, title, price, description, category, image }) {
       <p className="absolute top-2 right-2 text-xs italic text-gray-600">
         {category}
       </p>
+
       <Image
         src={image}
         height={200}
         width={200}
         objectFit="contain"
         alt="Product"
+        className="transform h-64 w-1/5 transition duration-500 hover:scale-125"
       />
+
       <h4 className="">{title}</h4>
       <div className="flex h-5 text-yellow-500">
         {Array(rating)
