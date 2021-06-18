@@ -6,15 +6,15 @@ import { QueryClient, QueryClientProvider } from "react-query";
 
 const MyApp = ({ Component, pageProps }) => {
   // const queryCache = QueryCache();
-  // const queryClient = QueryClient();
+  const queryClient = new QueryClient();
   return (
-    // <QueryClientProvider client={queryClient}>
-    <AuthProvider session={pageProps.session}>
-      <Provider store={store}>
-        <Component {...pageProps} />
-      </Provider>
-    </AuthProvider>
-    // </QueryClientProvider>
+    <QueryClientProvider client={queryClient}>
+      <AuthProvider session={pageProps.session}>
+        <Provider store={store}>
+          <Component {...pageProps} />
+        </Provider>
+      </AuthProvider>
+    </QueryClientProvider>
   );
 };
 

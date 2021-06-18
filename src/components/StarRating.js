@@ -1,5 +1,3 @@
-// import StarRatings from "react-star-ratings";
-// import React, { Component } from "react";
 import { Rating } from "@material-ui/lab";
 
 function StarRating({ newRating }) {
@@ -7,8 +5,6 @@ function StarRating({ newRating }) {
 
   return (
     <div>
-      {/* <StarRatings rating={newRating} /> */}
-
       <Rating
         name="half-rating-read"
         defaultValue={newRating}
@@ -16,8 +12,6 @@ function StarRating({ newRating }) {
         size="small"
         readOnly
       />
-
-      {/* <div>({newRating})</div> */}
     </div>
   );
 }

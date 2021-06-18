@@ -111,7 +111,7 @@ function Product({
 
       <div className="flex items-center ">
         <StarRating className=" text-yellow-500" newRating={rating} />
-        <p className="text-xs">({rating})</p>
+        <p className="text-xs text-gray-400">({rating})</p>
       </div>
 
       {/**** Description  ****/}
