@@ -3,6 +3,7 @@ import { useState } from "react";
 import { StarIcon } from "@heroicons/react/solid";
 import { useDispatch } from "react-redux";
 import { addToBasket } from "../slices/basketSlice";
+import { addToSeen } from "../slices/itemsSeenSlice";
 import { useRouter } from "next/router";
 import { AiFillStar } from "react-icons/ai";
 import StarRating from "./StarRating";
@@ -61,6 +62,8 @@ function Product({
       link,
     };
     // Sending the product as an action to the redux store... the basker slice
+
+    dispatch(addToSeen(product));
 
     const route = "/product/" + link;
 

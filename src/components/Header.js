@@ -19,16 +19,7 @@ function Header() {
   const router = useRouter();
   const items = useSelector(selectItems);
 
-  if (session && console.log(session.user.email, session.user.name));
-
-  const user = "Raj";
-
-  const show_user = () => {
-    var user;
-    user = "Raj";
-    console.log("User: ", user);
-    return <p>Raj</p>;
-  };
+  // if (session && console.log(session.user.email, session.user.name));
 
   return (
     <header>

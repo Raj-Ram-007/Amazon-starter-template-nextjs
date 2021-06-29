@@ -47,3 +47,10 @@ Create a product :
 Image Location :
 
     https://enginesroom.com/uploads/HomeEffect/img/Tea-Towels-Two-Tiny.jpg
+
+
+
+Example sites 
+
+https://www.allbirds.co.uk/products/mens-tree-dashers
+https://www.diy.com/departments/dulux-rich-black-matt-emulsion-paint-2-5l/183940_BQ.prd

@@ -12,10 +12,13 @@ import ProductFeed from "../components/ProductFeed";
 //const ProductFeed = loadable(() => import("../components/ProductFeed"));
 
 export default function Home() {
+  // Get the product data
   const { status, data, error, isFetching } = ProductCache();
 
-  // console.log("productcache: >>> " + productcache);
-  // const productsjson = productcache.product;
+  console.log("productcache: status     >>> " + status);
+  console.log("productcache: error      >>> " + error);
+  console.log("productcache: data       >>> " + data);
+  console.log("productcache: isFetching >>> " + isFetching);
 
   return (
     <div className="bg-gray-100">

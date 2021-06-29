@@ -61,7 +61,7 @@ function Checkout() {
 
             {items.map((item, i) => (
               <CheckoutProduct
-                ket={i}
+                key={i}
                 id={item.id}
                 title={item.title}
                 rating={item.rating}

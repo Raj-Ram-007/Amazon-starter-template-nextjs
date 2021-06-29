@@ -1,7 +1,7 @@
 import { Rating } from "@material-ui/lab";
 
 function StarRating({ newRating }) {
-  console.log("newRating :" + newRating);
+  // console.log("newRating :" + newRating);
 
   return (
     <div>
