@@ -6,7 +6,7 @@ import { SeenItems } from "../../slices/itemsSeenSlice";
 // import Header from "../../../..//components/Header";
 import Header from "../../components/Header";
 
-import FAQ from "../../components/FAQ";
+import CoreFeatures from "../../components/CoreFeatures";
 import { useState } from "react";
 import {
   Image,
@@ -21,8 +21,30 @@ import StarRating from "../../components/StarRating";
 import ScreenSize from "../../components/ScreenSize";
 import ImageMultiple from "../../components/ImageMultiple";
 import ImageSingle from "../../components/ImageSingle";
+import Breadcrumbs from "../../components/Breadcrumbs";
+import ProductCache from "../../components/ProductCache";
+import {
+  useQuery,
+  useQueryClient,
+  QueryClient,
+  QueryClientProvider,
+} from "react-query";
 
 const ProductSlug = () => {
+  //==================================================
+  // const queryClient = QueryClient();
+  // const queryCache = queryClient.getQueryCache();
+
+  // const query = queryCache.findall("products");
+
+  const queryClient = useQueryClient();
+  // const data = queryClient.getQueryData("products");
+  // const data = queryCache.getQueryData("products");
+
+  var { status, data, error, isFetching } = ProductCache("productSlug");
+
+  //==================================================
+
   const router = useRouter();
   const slug = router.query.slug || [];
 
@@ -34,35 +56,39 @@ const ProductSlug = () => {
     currency: "GBP",
   }).format(lastItem.price);
 
-  const [faqs, setfaqs] = useState([
+  const [CoreFeature, setCoreFeature] = useState([
     {
-      question: "How many programmers does it take to screw in a lightbulb?",
-      answer: "None. We don't address hardware issues.",
+      question: "100% Pure Cotton",
+      answer: "We only use cotton with minimum xxxxx",
       open: false,
     },
     {
-      question: "Who is the most awesome person?",
-      answer: "You. The Viewer.",
+      question: "Beautifully made",
+      answer: "You know it be true",
       open: false,
     },
     {
-      question:
-        "How many questions does it take to make a successful FAQ Page?",
-      answer: "This many.",
+      question: "Large 30 x 70",
+      answer: "You know it be true",
+      open: false,
+    },
+    {
+      question: "Care Guide",
+      answer: "Wash at low temperature and with like colours.",
       open: false,
     },
   ]);
 
-  const toggleFAQ = (index) => {
-    setfaqs(
-      faqs.map((faq, i) => {
+  const toggleCoreFeature = (index) => {
+    setCoreFeature(
+      CoreFeature.map((CoreFeatures, i) => {
         if (i === index) {
-          faq.open = !faq.open;
+          CoreFeatures.open = !CoreFeatures.open;
         } else {
-          faq.open = false;
+          CoreFeatures.open = false;
         }
 
-        return faq;
+        return CoreFeatures;
       })
     );
   };
@@ -74,7 +100,7 @@ const ProductSlug = () => {
       <div className="bg-gray-100 h-screen">
         <Header />
 
-        <main className="max-w-screen-lg mx-auto">
+        <main className="max-w-screen-xl mx-auto">
           <div className="flex flex-col p-2 bg-white">
             {/* 
 
@@ -82,7 +108,12 @@ const ProductSlug = () => {
 
             */}
             <div className="text-xs pb-10">
-              Home Products &gt; For Your Kitchen
+              {/* Home Products &gt; For Your Kitchen
+            </div>
+            <div> */}
+              <Breadcrumbs />
+
+              {/* {!isFetching && data.status} */}
             </div>
             {/* <div>{ss} </div> */}
             {/* <div className="text-gray-50 text-xs">
@@ -99,11 +130,11 @@ const ProductSlug = () => {
               </div>
             </div> */}
 
-            <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2   ">
+            <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-3   ">
               {/* 
-              Image section 
+              Image section : Single or Multiple
               */}
-              <div className="  ">
+              <div className="md:col-span-2">
                 {ss === "SMALL" ? <ImageSingle /> : <ImageMultiple />}
               </div>
 
@@ -126,71 +157,109 @@ const ProductSlug = () => {
                 {/* 
                 RATING 
                 */}
-                <div className="flex items-center align-middle">
-                  <StarRating
-                    className=" text-yellow-500"
-                    newRating={lastItem.rating}
-                  />
-                  <p className="text-xs text-gray-400">({lastItem.rating})</p>
+                <div className="flex items-center">
+                  <div className="pt-1">
+                    <StarRating newRating={lastItem.rating} />
+                  </div>
+                  <div className="text-xs pl-1 text-gray-400">
+                    [{lastItem.rating}]
+                  </div>
                 </div>
                 {/* PRICE */}
-                <div className="pt-2">{currency}</div>
-
-                <div className="text-center pb-5">
-                  <button
-                    onClick={() => router.push("/orders")}
-                    className="button mt-8"
-                  >
-                    Add to Cart
-                  </button>
-
-                  <p className="pt-1 text-xs flex whitespace-nowrap justify-center  items-center ">
-                    <FcLock /> {" Secure Transaction"}
-                  </p>
+                <div className="pt-4 text-2xl text-center font-semibold">
+                  {currency}
                 </div>
 
-                {/* 
+                <div className="text-center pt-4">
+                  <button
+                    onClick={() => router.push("/orders")}
+                    className="button w-full"
+                  >
+                    Add to Basket
+                  </button>
 
-                Key Features
-
-                */}
-
-                <div className="text-left font-semibold">Key features</div>
-
-                <div className="pt-1 pl-2 text-sm">{lastItem.description} </div>
+                  <p className="pt-1 text-xs flex whitespace-nowrap justify-center">
+                    <FcLock /> {" Secure Transaction"}
+                  </p>
+                  <p className="pt-1 text-xs">Free delivery & 30 day returns</p>
+                </div>
 
                 {/* 
 
                 Description
 
                 */}
-                <div className="pt-5 ">
-                  <div className="font-semibold">Description</div>
 
-                  {faqs.map((faq, i) => (
-                    <div className="text-sm pt-1">
-                      <FAQ faq={faq} index={i} toggleFAQ={toggleFAQ} />
+                <div className="pt-5 text-left font-semibold text-sm">
+                  Description
+                </div>
+
+                <div className="pt-3 pl-2 text-sm">{lastItem.description} </div>
+
+                {/* 
+
+                Core Features
+
+                */}
+
+                <div className="pt-8">
+                  <div className="font-semibold text-sm">Core Features</div>
+
+                  {CoreFeature.map((CoreFeature, i) => (
+                    <div className="text-sm pt-3 whitespace-normal">
+                      <CoreFeatures
+                        CoreFeatures={CoreFeature}
+                        index={i}
+                        toggleCoreFeatures={toggleCoreFeature}
+                      />
                     </div>
                   ))}
                 </div>
               </div>
             </div>
+
+            {/* 
+
+            Enhanced Content
+
+            */}
+
+            <div className="pt-10 my-2">
+              <div className="text-lg font-semibold mb-5">Enhanced Content</div>
+              <div className="shadow bg-blue-100">Items here</div>
+            </div>
+
             {/* 
 
             Frequently Bought Together
 
             */}
-            <div className="py-5 my-2">
+
+            <div className="pt-10 my-2">
               <div className="text-lg font-semibold mb-5">
                 Frequently bought together
               </div>
               <div className="shadow bg-blue-100">Items here</div>
             </div>
-            <div className="py-5 my-2">
+
+            {/* 
+
+            Customer Rating
+
+            */}
+
+            <div className="pt-10 my-2">
               <div className="text-lg font-semibold mb-5">Customer Ratings</div>
               <div className="shadow bg-blue-100">Items here</div>
             </div>
-            <div className="py-5 my-2">
+
+            {/* 
+
+            Other Products You May Like
+
+            */}
+
+            <div className="pt-10 my-2">
               <div className="text-lg font-semibold mb-5">
                 Other Products You May Like
               </div>

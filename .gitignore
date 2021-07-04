@@ -34,3 +34,5 @@ yarn-error.log*
 .vercel
 .env
 scripts/stripe.exe
+postgres/AppSetting
+postgres/ProductTable

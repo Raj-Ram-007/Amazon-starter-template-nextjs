@@ -12,7 +12,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     });
 
     res.status(200);
-    res.json({ product });
+    res.json(product);
+    // res.json(product);
   } catch (e) {
     res.status(500);
     res.json({ error: "Unable to retreieve product" + e.message });

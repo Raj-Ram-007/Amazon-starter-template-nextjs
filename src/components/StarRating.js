@@ -4,15 +4,13 @@ function StarRating({ newRating }) {
   // console.log("newRating :" + newRating);
 
   return (
-    <div>
-      <Rating
-        name="half-rating-read"
-        defaultValue={newRating}
-        precision={0.25}
-        size="small"
-        readOnly
-      />
-    </div>
+    <Rating
+      name="half-rating-read"
+      defaultValue={newRating}
+      precision={0.25}
+      size="small"
+      readOnly
+    />
   );
 }
 

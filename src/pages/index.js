@@ -10,15 +10,42 @@ import ProductCache from "../components/ProductCache";
 //import loadable from "@loadable/component";
 import ProductFeed from "../components/ProductFeed";
 //const ProductFeed = loadable(() => import("../components/ProductFeed"));
+import ImageLocation from "../components/ImageLocation";
 
 export default function Home() {
   // Get the product data
-  const { status, data, error, isFetching } = ProductCache();
+  var { status, data, error, isFetching } = ProductCache("Index");
 
-  console.log("productcache: status     >>> " + status);
-  console.log("productcache: error      >>> " + error);
-  console.log("productcache: data       >>> " + data);
-  console.log("productcache: isFetching >>> " + isFetching);
+  var dataprod = "";
+
+  const statusprod = status;
+  if (statusprod === "loading") {
+    console.log("Still loading...");
+    dataprod = "";
+  } else {
+    console.log("Loaded...");
+    dataprod = data;
+    const errorprod = error;
+    const isFetchingprod = isFetching;
+
+    console.log("productcache: status     >>> " + statusprod);
+    console.log("productcache: error      >>> " + errorprod);
+    console.log("productcache: data       >>> " + JSON.stringify(dataprod));
+    console.log("productcache: isFetching >>> " + isFetchingprod);
+  }
+
+  var { status, data, error, isFetching } = ImageLocation();
+
+  // console.log("imagelocationdbcall: status     >>> " + status);
+  // console.log("imagelocationdbcall: error      >>> " + error);
+  // !isFetching && console.log("imagelocationdbcall: data       >>> " + data);
+  // console.log("imagelocationdbcall: isFetching >>> " + isFetching);
+
+  // https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON
+  if (!isFetching) {
+    const st = data;
+    console.log("st > ", st);
+  }
 
   return (
     <div className="bg-gray-100">
@@ -39,12 +66,12 @@ export default function Home() {
         <Banner />
         {/* Product Feed */}
 
-        {status === "loading" ? (
+        {statusprod === "loading" ? (
           "Loading..."
-        ) : status === "error" ? (
-          <span>Error: {error.message}</span>
+        ) : statusprod === "error" ? (
+          <span>Error: {errorprod.message}</span>
         ) : (
-          <ProductFeed products={data.product} />
+          dataprod && <ProductFeed products={dataprod} />
         )}
       </main>
     </div>

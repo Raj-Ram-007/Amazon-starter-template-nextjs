@@ -6,21 +6,23 @@ import {
   Placeholder,
 } from "cloudinary-react";
 
+import GetImage from "./GetImage";
+
 function ImageMultiple() {
   // console.log("Image Mutiple");
 
   return (
-    <div>
+    <div className="col-span-2">
       <div className="grid gap-2 grid-cols-2 grid-rows-3">
         {/* Image section */}
-
-        <div className=" flex items-center rounded-xl">
+        {/* <GetImage /> */}
+        <div className=" flex items-center ">
           <Image cloudName="homeeffect" publicId="TT1-1" loading="lazy">
             <Placeholder type="Predominate color" />
           </Image>
         </div>
         <div className=" flex items-center rounded-full ">
-          <Image cloudName="homeeffect" publicId="TT1-2" loading="lazy">
+          <Image cloudName="homeeffect" publicId="TT1-2-SQ" loading="lazy">
             <Placeholder type="Predominate color" />
           </Image>
         </div>
@@ -35,12 +37,12 @@ function ImageMultiple() {
           </Image>
         </div>
         <div className=" flex items-center ">
-          <Image cloudName="homeeffect" publicId="TT1-5" loading="lazy">
+          <Image cloudName="homeeffect" publicId="TT1-6" loading="lazy">
             <Placeholder type="Predominate color" />
           </Image>
         </div>
         <div className=" flex items-center ">
-          <Image cloudName="homeeffect" publicId="TT1-6" loading="lazy">
+          <Image cloudName="homeeffect" publicId="TT1-5" loading="lazy">
             <Placeholder type="Predominate color" />
           </Image>
         </div>

@@ -99,7 +99,19 @@ function Header() {
           <p className="link">Amazon Business</p>
           <p className="link">Todays Deals</p>
           <p className="link hidden lg:inline-flex">Electronics</p> */}
-          <p className="link">Cushions</p>
+          <p className="link">Living</p>
+          <p className="link" onClick={() => router.push("/kitchen")}>
+            Kitchen
+          </p>
+          {/* onClick={router.push("/kitchenproducts")}>
+            Kitchen
+          </p> */}
+          <p className="link">Bathroom</p>
+          <p className="link">Bedroom</p>
+          <p className="link">Clothes</p>
+          <p className="link">Toys</p>
+          <p className="link">Pets</p>
+          <p className="link">Recycled & Upcycled</p>
         </div>
         <div className="flex-grow justify-items-end whitespace-nowrap">
           <p

@@ -13,6 +13,7 @@ datasource db {
 
 model Product {
   id      Int @id @default(autoincrement())
+  productcode String?
   title   String
   price   Decimal  @db.Money
   isActive           Boolean?
@@ -22,10 +23,19 @@ model Product {
   image   String? @db.VarChar(255)
   link    String @db.VarChar(255) @default("404")
   rating  Decimal @db.Decimal(2,1)  @default(4.6)
+  feature1title String? @db.VarChar(255)
+  feature1desc String? @db.Text
   created_at DateTime? @default(now()) @db.Timestamptz(6)
   updated_at DateTime? @default(now()) @db.Timestamptz(6)
-
 }
 
+model AppSetting {
+  id      Int @id @default(autoincrement())
+  appsettingcode   String
+  setting   String
+  value   String
+  created_at DateTime? @default(now()) @db.Timestamptz(6)
+  updated_at DateTime? @default(now()) @db.Timestamptz(6)
+}
 
 
