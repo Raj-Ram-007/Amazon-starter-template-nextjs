@@ -90,7 +90,7 @@ function Header() {
       {/*Bottom NAV  */}
 
       <div className="flex space-x-3 p-2 pl-6 bg-amazon_blue-light text-white text-sm ">
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center space-x-8">
           {/* <p className="link flex items-center">
             <MenuIcon className="h-6 mr-1" />
             All
@@ -99,28 +99,57 @@ function Header() {
           <p className="link">Amazon Business</p>
           <p className="link">Todays Deals</p>
           <p className="link hidden lg:inline-flex">Electronics</p> */}
-          <p className="link">Living</p>
+          <p className="link" onClick={() => router.push("/living")}>
+            Living
+          </p>
+
           <p className="link" onClick={() => router.push("/kitchen")}>
             Kitchen
           </p>
           {/* onClick={router.push("/kitchenproducts")}>
             Kitchen
           </p> */}
-          <p className="link">Bathroom</p>
-          <p className="link">Bedroom</p>
-          <p className="link">Clothes</p>
-          <p className="link">Toys</p>
-          <p className="link">Pets</p>
-          <p className="link">Recycled & Upcycled</p>
-        </div>
-        <div className="flex-grow justify-items-end whitespace-nowrap">
-          <p
-            onClick={session && signOut}
-            className="link flex justify-end items-center text-right text-sm text-white pr-10 "
-          >
-            <p className="pr-1"> {session ? <FiLogOut /> : ""} </p>
-            {session ? "  Sign Out" : ""}
+          <p className="link" onClick={() => router.push("/bathroom")}>
+            Bathroom
           </p>
+          <p className="link" onClick={() => router.push("/bedroom")}>
+            Bedroom
+          </p>
+          <p className="link" onClick={() => router.push("/clothes")}>
+            Clothes
+          </p>
+          <p className="link" onClick={() => router.push("/toys")}>
+            Toys
+          </p>
+          <p className="link" onClick={() => router.push("/pets")}>
+            Pets
+          </p>
+          <p className="link" onClick={() => router.push("/recycled")}>
+            Recycled & Upcycled
+          </p>
+        </div>
+        <div className="flex-grow whitespace-nowrap items-center  text-sm text-white ">
+          <div className="flex items-center justify-end">
+            {/* <p className="link justify-end items-center text-right text-sm text-white pr-10"> */}
+            <div
+              className="link pr-6"
+              onClick={() => router.push("/affiliate")}
+            >
+              Become an Affiliate
+            </div>
+            <div
+              onClick={session && signOut}
+              className="link flex items-center"
+            >
+              <div
+                onClick={session && signOut}
+                className="text-sm text-white "
+                // className="link flex justify-end items-center text-right text-sm text-white pr-10 "
+              ></div>
+              <div className="pr-1"> {session ? <FiLogOut /> : ""} </div>
+              {session ? "  Sign Out" : ""}
+            </div>
+          </div>
         </div>
       </div>
     </header>

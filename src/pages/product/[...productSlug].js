@@ -111,7 +111,7 @@ const ProductSlug = () => {
               {/* Home Products &gt; For Your Kitchen
             </div>
             <div> */}
-              <Breadcrumbs />
+              <Breadcrumbs category={lastItem.category} />
 
               {/* {!isFetching && data.status} */}
             </div>

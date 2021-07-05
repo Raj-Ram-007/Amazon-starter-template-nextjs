@@ -21,7 +21,6 @@ export default function Home() {
   const statusprod = status;
   if (statusprod === "loading") {
     console.log("Still loading...");
-    dataprod = "";
   } else {
     console.log("Loaded...");
     dataprod = data;
